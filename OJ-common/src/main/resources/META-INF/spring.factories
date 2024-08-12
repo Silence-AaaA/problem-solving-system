@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.wly.config.MyBatisConfig,\
+  com.wly.config.MvcConfig,\
+  com.wly.config.JsonConfig

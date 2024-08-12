@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wly.mapper.TopicMapper">
+
+    <resultMap id="BaseResultMap" type="com.wly.domain.Topic">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="topicName" column="topic_name" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="level" column="level" jdbcType="OTHER"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="author" column="author" jdbcType="VARCHAR"/>
+            <result property="creator" column="creator" jdbcType="BIGINT"/>
+            <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+            <result property="updater" column="updater" jdbcType="BIGINT"/>
+            <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,topic_name,type,
+        level,description,author,
+        creator,create_date,updater,
+        update_date
+    </sql>
+
+    <insert id="insertTopics" parameterType="java.util.Set">
+        insert into topic values(topic_name,type,level,description,author,creator,create_date)
+        <foreach collection="topics" item="competitionTopic" index="index" separator=",">
+            (
+            #{competitionTopic.topic.topicName},
+            #{competitionTopic.topic.type},
+            #{competitionTopic.topic.level},
+            #{competitionTopic.topic.description},
+            #{competitionTopic.topic.userName},
+            #{competitionTopic.topic.userId},
+            #{competitionTopic.topic.now}
+            )
+        </foreach>
+    </insert>
+    <select id="selectTopicIds" resultType="java.lang.Long"
+            parameterType="java.util.Set"></select>
+</mapper>

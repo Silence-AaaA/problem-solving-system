@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: topic-service # 服务名称
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 192.168.88.130:8848 # nacos地址
+      config:
+        server-addr: 192.168.88.130:8848 # nacos地址
+        file-extension: yaml # 文件后缀名
+        shared-configs: # 共享配置
+          - dataId: shared-jdbc.yaml # 共享mybatis配置
+          - dataId: share-log.yaml # 共享日志配置
+          - dataId: shared-swagger.yaml # 共享日志配置
+        context-path: /topic
+  redis:
+    host: 0.0.0.0
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 100ms

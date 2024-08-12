@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wly.mapper.TopicKeyMapper">
+
+    <resultMap id="BaseResultMap" type="com.wly.domain.TopicKey">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="topicId" column="topic_id" jdbcType="BIGINT"/>
+            <result property="topicName" column="topic_name" jdbcType="VARCHAR"/>
+            <result property="participantId" column="participant_id" jdbcType="BIGINT"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="creator" column="creator" jdbcType="BIGINT"/>
+            <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+            <result property="updater" column="updater" jdbcType="BIGINT"/>
+            <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,topic_id,topic_name,
+        participant_id,content,creator,
+        create_date,updater,update_date
+    </sql>
+</mapper>

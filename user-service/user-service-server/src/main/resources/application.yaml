@@ -1,0 +1,6 @@
+server:
+  port: 8081
+
+hm:
+  db:
+    database: OJ

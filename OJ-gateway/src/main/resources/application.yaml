@@ -1,0 +1,31 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.88.130:8848
+
+    gateway:
+      routes:
+        - id: user
+          uri: lb://user-service
+          predicates:
+            - Path=/users/**
+
+        - id: topic
+          uri: lb://topic-service
+          predicates:
+            - Path=/topic/**
+      #        设置全局过滤器
+      default-filters:
+
+
+com:
+  auth:
+    exclude-paths:
+      - /users/login
+      - /topic/topic/**
+      - /users/register

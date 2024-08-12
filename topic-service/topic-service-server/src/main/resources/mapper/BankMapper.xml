@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wly.mapper.BankMapper">
+
+    <resultMap id="BaseResultMap" type="com.wly.domain.Bank">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="bankName" column="bank_name" jdbcType="VARCHAR"/>
+            <result property="bankDescription" column="bank_description" jdbcType="VARCHAR"/>
+            <result property="creator" column="creator" jdbcType="BIGINT"/>
+            <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+            <result property="updater" column="updater" jdbcType="BIGINT"/>
+            <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,bank_name,bank_description,
+        creator,create_date,updater,
+        update_date
+    </sql>
+
+    <insert id="insertBankTopics" parameterType="java.util.Set">
+    insert into bank_topic values
+        <foreach collection="ids" item="id" index="index" separator=",">
+                (
+                #{bankId},
+                #{id}
+                )
+        </foreach>
+    </insert>
+
+    <delete id="deleteBankTopics">
+        delete from bank_topic where bank_id = #{bankId} and topic_id in(#{ids})
+    </delete>
+</mapper>

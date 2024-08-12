@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.CompetitionResultMapper">
+
+    <resultMap id="BaseResultMap" type="com.wly.domain.CompetitionResult">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="competitionId" column="competition_id" jdbcType="BIGINT"/>
+            <result property="commentName" column="comment_name" jdbcType="VARCHAR"/>
+            <result property="ranks" column="ranks" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,competition_id,comment_name,
+        ranks
+    </sql>
+</mapper>

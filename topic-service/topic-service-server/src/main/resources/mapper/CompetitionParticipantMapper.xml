@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.CompetitionParticipantMapper">
+
+    <resultMap id="BaseResultMap" type="com.wly.domain.CompetitionParticipant">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="competitionId" column="competition_id" jdbcType="BIGINT"/>
+            <result property="competitionName" column="competition_name" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="creator" column="creator" jdbcType="BIGINT"/>
+            <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+            <result property="updater" column="updater" jdbcType="BIGINT"/>
+            <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+            <result property="score" column="score" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,competition_id,competition_name,
+        user_id,user_name,creator,
+        create_date,updater,update_date,
+        score
+    </sql>
+</mapper>
