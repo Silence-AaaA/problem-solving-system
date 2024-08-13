@@ -5,11 +5,14 @@
     <file url="file://$PROJECT_DIR$/OJ-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/OJ-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/OJ-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OJ-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/OJ-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OJ-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/competition-service/competition-service-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/competition-service/competition-service-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/competition-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/judge-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/judge-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/topic-service/src/main/java" charset="UTF-8" />
